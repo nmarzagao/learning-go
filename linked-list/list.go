@@ -1,7 +1,4 @@
-package main
-import (
-	"fmt"
-)
+package linked_list
 
 type Node struct {
 	data int
@@ -12,14 +9,14 @@ type List struct {
 	head *Node
 }
 
-//func (l *List) isEmpty() bool {
-//	return (l.head == nil)
-//}
+func (l *List) is_empty() bool {
+    return (l.head == nil)
+}
 
 func (l *List) insert(value int) {
 	newNode := &Node{data: value}
 
-    if l.head == nil {
+    if l.is_empty() {
         l.head = newNode
         return
     }
@@ -34,7 +31,7 @@ func (l *List) insert(value int) {
 
 
 func (l *List) remove(value int) {
-	if l.head == nil {
+	if l.is_empty() {
         return
     }
 
@@ -53,8 +50,9 @@ func (l *List) remove(value int) {
     }
 }
 
+/*
 func printList(l *Node) {
-	if l == nil {
+	if l.is_empty() {
 		fmt.Println("nil")
 		fmt.Println("");
 		return
@@ -63,3 +61,4 @@ func printList(l *Node) {
 		printList(l.next)
 	}
 }
+*/
